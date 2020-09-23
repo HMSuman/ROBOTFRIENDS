@@ -1,0 +1,222 @@
+h1 {
+    text-align: center;
+    font-family: Roboto, sans-serif;
+}
+
+.robots {
+    display: flex;
+    justify-content: center;
+}
+
+.robot {
+    width: 20%;
+    max-width: 200px;
+    margin: 110px;
+}
+
+.head {
+    width: 100%;
+    min-height: 150px;
+    border-radius: 200px 200px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.eyes {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.eye {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.eye.left {
+    background: pink;
+}
+
+.eye.right {
+    background: pink;
+}
+
+.chest {
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.torso {
+    width: 100%;
+    height: 200px;
+    border-radius: 0px 0px 50px 50px;
+}
+
+.arm {
+    position: absolute;
+    top: 0px;
+    width: 20%;
+    min-height: 130px;
+    border-radius: 100px;
+}
+
+.arm.left {
+    right: 105%;
+}
+
+.arm.right {
+    left: 105%;
+}
+
+.legs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transform: translate(0px, -30%);
+}
+
+.leg {
+    width: 20%;
+    min-height: 150px;
+    border-radius: 0px 0px 100px 100px;
+}
+
+.leg.left {}
+
+.leg.right {}
+
+.robot.android .head,
+.robot.android .torso,
+.robot.android .arm,
+.robot.android .leg {
+    background: rgb(85 12 227);
+}
+
+.robot.androids .head,
+.robot.androids .torso,
+.robot.androids .arm,
+.robot.androids .leg {
+    background-color: rebeccapurple;
+}
+
+.robot.other .head,
+.robot.other .torso,
+.robot.other .arm,
+.robot.other .leg {
+    background: #26e1d0;
+}
+
+.robot.others .head,
+.robot.others .torso,
+.robot.others .arm,
+.robot.others .leg {
+    background-color: red;
+}
+
+@keyframes eye-dance {
+    0% {
+        transform: translate(60%, 0px);
+    }
+    50% {
+        transform: translate(0%, 0px);
+    }
+    100% {
+        transform: translate(60%, 0px);
+    }
+}
+
+@keyframes leg-stomp {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0%, -10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes arm-dance {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: rgba(0, 0, 0, 0) -2px 0px 3px 3px;
+    }
+    25% {
+        transform: rotate(20deg);
+        box-shadow: rgba(0, 0, 0, 0.1) -2px 0px 3px 3px;
+    }
+    50% {
+        transform: rotate(0deg);
+        box-shadow: rgba(0, 0, 0, 0) -2px 0px 3px 3px;
+    }
+    75% {
+        transform: rotate(-20deg);
+        box-shadow: rgba(0, 0, 0, 0.1) -2px 0px 3px 3px;
+    }
+    100% {
+        transform: rotate(0deg);
+        box-shadow: rgba(0, 0, 0, 0) -2px 0px 3px 3px;
+    }
+}
+
+.robot .eye {
+    animation: 1s ease 0s infinite normal none running eye-dance;
+}
+
+.robot .leg.left {
+    animation: 1s ease 0.5s infinite normal none running leg-stomp;
+}
+
+.robot .leg.right {
+    animation: 1s ease 1s infinite normal none running leg-stomp;
+}
+
+.robot .arm {
+    transform-origin: right top;
+    animation: 2s ease 0s infinite normal none running arm-dance;
+}
+
+@keyframes head-chomp {
+    0% {
+        transform: translate(0px, 0%);
+    }
+    50% {
+        transform: translate(0px, 5%);
+    }
+    100% {
+        transform: translate(0px, 0%);
+    }
+}
+
+@keyframes scary-eyes {
+    0% {
+        background: white;
+    }
+    50% {
+        background: blue;
+    }
+    100% {
+        background: white;
+    }
+}
+
+.robot.other .head {
+    animation: 2s ease 0s infinite normal none running head-chomp;
+}
+
+.robot.other .eye {
+    animation: 1s ease 0s infinite normal none running scary-eyes;
+}
